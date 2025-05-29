@@ -1,0 +1,136 @@
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+.projects-card {
+  background: none; 
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  width: 55%;
+  min-height: 250px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1;
+}
+.projects-card h2 {
+  color: white;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.projects-card p {
+  color: white;
+  position: relative;
+  z-index: 1;
+  font-size: 1em;
+}
+
+.background-code {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: rgba(255, 255, 255, 0.1);
+  font-size: 1em;
+  word-break: break-all;
+  white-space: pre-wrap;
+  transform: rotate(15deg);
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.external-link-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  z-index: 2;
+}
+.project-illustration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.2; /* ajusta esto según qué tan visible quieres que sea el gif detrás del texto */
+}
+.linkdein-icon {
+
+    position: absolute;
+    top: 20px;
+    left: 580px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    z-index: 2;
+}
+
+.age-card {
+  background-color: #E53935; 
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ width: 20%;
+}
+
+.age-label {
+  font-size: 0.8em;
+  margin-bottom: 5px;
+}
+
+.age-number {
+  font-size: 3em;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.age-years {
+  font-size: 1em;
+}
+
+
+.linkdein-card{
+    background-color: #1E88E5; 
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+  
+}
+.linkdein-label{
+    font-family: 'Source Sans Pro', sans-serif;
+
+  font-size: 5em;
+  margin-bottom: 5px;
+  font-weight: bold;
+
+}
+

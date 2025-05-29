@@ -1,0 +1,110 @@
+.lenguaje-card {
+    width: 180px;
+    height: 138px;
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    color: white;
+    font-family: sans-serif;
+    padding: 15px;
+    transition: transform 0.2s ease;
+}
+
+.lenguaje-card:hover {
+    transform: scale(1.05);
+}
+
+.current-language {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.other-language {
+    font-size: 1.2em;
+    opacity: 0.8;
+}
+
+/* Dark theme styles */
+.dark .lenguaje-card {
+    background-color: #333333; /* Dark background for card */
+    color: #eeeeee; /* Light text in dark mode */
+}
+
+/* Remove old button and dropdown styles */
+.language-button,
+.language-button.active,
+.language-selector .btn-link,
+.language-selector .flag-icon,
+.language-selector .dropdown-menu,
+.language-selector .dropdown-item {
+    display: none;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px; /* Adjusted size */
+    height: 24px; /* Adjusted size */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc; /* Slider background color */
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px; /* Adjusted size */
+    width: 18px; /* Adjusted size */
+    left: 3px; /* Adjusted position */
+    bottom: 3px; /* Adjusted position */
+    background-color: white; /* Slider knob color */
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3; /* Slider background color when checked */
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(16px); /* Adjusted move distance */
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 24px; /* Should be half of height */
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Remove remaining old dropdown styles */
+.language-selector .btn-link,
+.language-selector .flag-icon,
+.language-selector .dropdown-menu,
+.language-selector .dropdown-item {
+    display: none;
+}

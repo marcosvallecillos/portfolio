@@ -1,0 +1,8 @@
+    <!-- Suponiendo un entorno tipo Svelte/Angular/Vue -->
+    <div class="cards-container">
+    @for(redes of redes; track redes.name) {
+        <div class="card">
+        <a href="{{redes.url}}"> <p class="card-title">{{ redes.name }}</p></a>
+        </div>
+    }
+    </div>

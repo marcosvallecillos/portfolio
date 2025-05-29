@@ -1,0 +1,61 @@
+/* Contenedor de las tarjetas */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+
+
+/* Tarjeta individual */
+.card {
+  background-color: #1a1a1a;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 1.2rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
+}
+
+/* Alternar animación entre izquierda y derecha */
+.card:nth-child(odd) {
+  animation-name: slideFromLeft;
+}
+
+.card:nth-child(even) {
+  animation-name: slideFromRight;
+}
+
+/* Hover */
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Animaciones */
+@keyframes slideFromLeft {
+  0% { transform: translateX(-100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideFromRight {
+  0% { transform: translateX(100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+a{
+  text-decoration: none;
+  color: inherit; /* Hereda el color del elemento padre */
+}
+/* Título */
+.card-title {
+  font-size: 1.1rem;
+  color: #ffffff;
+  font-weight: bold;
+  margin: 0;
+}
