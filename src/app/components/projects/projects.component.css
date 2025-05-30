@@ -70,7 +70,7 @@
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  opacity: 0.2; /* ajusta esto según qué tan visible quieres que sea el gif detrás del texto */
+  opacity: 0.4; /* ajusta esto según qué tan visible quieres que sea el gif detrás del texto */
 }
 .linkdein-icon {
 

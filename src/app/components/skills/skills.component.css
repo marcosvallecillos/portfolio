@@ -85,10 +85,11 @@
 
 .skills-card {
   background-color: #3e2723;
+  color: white;
   border-radius: 10px; 
   padding: 30px; 
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
+  grid-template-columns: repeat(4, 1fr); 
   gap: 20px; 
   text-align: center;
   width: 20%;
@@ -97,10 +98,9 @@
 
 .skills-card img {
   border-radius: 0; 
-  width: 60px; 
-  height: 60px; 
+  width: 80px; 
+  height: 80px; 
   margin-bottom: 0; 
-  filter: invert(0.9);
 }
 
 .age-label {
@@ -141,3 +141,28 @@
 
 }
 
+.nevel-english-card{
+    background-color: #015177; 
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+.nevel-english-label{
+    font-family: 'Source Sans Pro', sans-serif;
+
+  font-size: 1.5em;
+  margin-bottom: 5px;
+  font-weight: bold;
+
+}
+.nevel-english-number {
+  font-size: 8em;
+  font-weight: bold;
+  line-height: 1;
+}

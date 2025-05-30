@@ -1,0 +1,22 @@
+
+.contact-card{
+    background-color: #1E88E5; 
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  
+}
+.linkdein-label{
+    font-family: 'Source Sans Pro', sans-serif;
+
+  font-size: 5em;
+  margin-bottom: 5px;
+  font-weight: bold;
+
+}

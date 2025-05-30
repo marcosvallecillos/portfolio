@@ -7,16 +7,17 @@ import { ThemeComponent } from '../../components/theme/theme.component';
 import { SocialsComponent } from '../../components/socials/socials.component';
 import { ProjectsComponent } from '../../components/projects/projects.component';
 import { SkillsComponent } from '../../components/skills/skills.component';
+import { ContactComponent } from '../../components/contact/contact.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, AboutMeComponent, LanguajeBottomComponent, ThemeComponent, SocialsComponent, ProjectsComponent, SkillsComponent],
+  imports: [CommonModule, ContactComponent,AboutMeComponent, LanguajeBottomComponent, ThemeComponent, SocialsComponent, ProjectsComponent, SkillsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements AfterViewInit {
-  @ViewChildren('aboutMeSection , socialsSection, projectsSection, skillsSection') sections!: QueryList<ElementRef>;
+  @ViewChildren('aboutMeSection , socialsSection, projectsSection, skillsSection , topRightButtons') sections!: QueryList<ElementRef>;
 
   isSpanish: boolean = true;
 
