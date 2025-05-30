@@ -8,8 +8,8 @@ import { LanguajeBottomComponent } from '../../components/languaje-bottom/langua
 
 interface Project {
   id: number;
-  title: string;
-  description: string;
+  title: { es: string; en: string };
+  description: { es: string; en: string };
   imageUrl: string;
   videoUrl?: string;
   technologies: string[];
@@ -34,12 +34,9 @@ export class ProjectsComponent {
   projects: Project[] = [
     {
       id: 1,
-      title: 'Hairbooking',
-      description:this.getText(
-        'Una aplicación que permite gestionar las reservas de un salón de peluquería',
-        'A web application for managing a hair salon booking system'
-      ),
-      imageUrl: '../../../../images/hairbooking.png',
+        title: { es: 'Hairbooking', en: 'Hairbooking' },
+      description: { es: 'Aplicación web para reservar citas de peluquería.', en: 'A web application for booking hair appointments.' },
+     imageUrl: '../../../../images/hairbooking.png',
       imgHover: '../../../../images/reservas.png',
       technologies: ['Angular', 'PHP' , 'HTML', 'MySQL' , 'Bootstrap'],
       liveUrl: 'https://hairbooking.vercel.app/index',
@@ -47,11 +44,8 @@ export class ProjectsComponent {
     },
     {
       id:2,
-      title: 'Club de Lucha',
-      description: this.getText(
-        'Una aplicación web para gestionar un club de lucha',
-        'A web application for managing a fight club'
-      ),
+    title: { es: 'Club de Lucha', en: 'Fight Club' },
+      description: { es: 'Aplicación web para gestionar un club de lucha.', en: 'A web application for managing a fight club.' },
       imageUrl: '../../../../images/clubdelucha.png',
       imgHover: '../../../../images/reservas.png',
       technologies: ['Angular', 'PHP' , 'HTML', 'MySQL' , 'Bootstrap'],
@@ -60,11 +54,9 @@ export class ProjectsComponent {
     },
     {
       id:2,
-      title: 'PlayaFinder',
-      description: this.getText(
-        'Es una aplicación que permite buscar playas cercanas y consultar su información',
-        'It is an application that allows you to search nearby beaches and check their information'
-      ),
+     title: { es: 'PlayaFinder', en: 'BeachFinder' },
+      description: { es: 'Aplicación web para encontrar playas.', en: 'A web application for finding beaches.' },
+      
       imageUrl: '../../../../images/clubdelucha.png',
       imgHover: '../../../../images/reservas.png',
       technologies: ['PHP' , 'HTML', 'MySQL'],
