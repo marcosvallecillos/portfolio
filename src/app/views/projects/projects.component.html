@@ -1,4 +1,46 @@
+<app-header></app-header>
+<section class="projects-section ">
+  <div class="container">
+    <h2 class="section-title mt-12">{{getText('Proyectos','Projects')}}</h2>
+    
+    <div class="theme-toggle-container">
+      <label class="switch">
+        <input type="checkbox" (change)="toggleTheme()" [checked]="isDarkTheme">
+        <span class="slider round">
+        </span>
+      </label>
+    </div>
 
-<div class="container">
-    <div class="pojects"></div>
-</div>
+    <div class="projects-grid">
+      @for (project of projects; track project.id) {
+        <div class="project-card">
+          <div class="project-image">
+            <img [src]="project.imageUrl" [alt]="project.title">
+          </div>
+        
+          <div class="project-content">
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-description">{{ project.description }}</p>
+            <div class="project-technologies">
+              @for (tech of project.technologies; track tech) {
+                <span class="tech-tag">{{ tech }}</span>
+              }
+            </div>
+            <div class="project-links">
+              @if (project.liveUrl) {
+                <a [href]="project.liveUrl" target="_blank" class="project-link live-link">
+                    <img class="github" src="../../../../images/flecha.png" alt="">
+                </a>
+              }
+              @if (project.githubUrl) {
+                <a [href]="project.githubUrl" target="_blank" class="project-link github-link">
+                    <img class="github" src="../../../../images/github.png" alt="">
+                </a>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './theme.component.css'
 })
 export class ThemeComponent {
+  isDarkTheme: boolean = false;
   constructor(private themeService: ThemeService) {}
 
   toggleTheme() {
