@@ -13,4 +13,8 @@ export class ThemeService {
   toggleTheme() {
     this.isDarkTheme.next(!this.isDarkTheme.value);
   }
+
+  setTheme(isDark: boolean) {
+    this.isDarkTheme.next(isDark);
+  }
 } 

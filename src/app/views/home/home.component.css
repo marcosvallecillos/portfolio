@@ -24,9 +24,11 @@
 .container {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    
     padding: 20px 10px;
     font-family: sans-serif; 
+    background-color: var(--background-color);
+    color: var(--text-color);
     transition: background-color 0.3s ease, color 0.3s ease;
   
     margin: 0 auto; 
@@ -47,6 +49,8 @@
     gap: 10px;
     width: 100%;
     padding: 10px 0;
+    background-color: var(--section-background);
+    transition: background-color 0.3s ease;
 }
 
 .about-me-container {
@@ -60,6 +64,19 @@
     gap: 10px;
     align-items: center;
 }
+
+.projects-section,
+.skills-section,
+.contact-section {
+    background-color: var(--section-background);
+    transition: background-color 0.3s ease;
+   
+    width: 100%;
+}
+.contact-section
+    {
+        padding: 20px 0;
+    }
 
 /* Tablet and larger screens */
 @media (min-width: 768px) {
@@ -138,5 +155,5 @@
 
 /* Ensure smooth transitions */
 * {
-    transition: all 0.3s ease-in-out;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }

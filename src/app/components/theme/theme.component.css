@@ -1,7 +1,7 @@
 .theme-card {
-width: 140px;
+    width: 140px;
     height: 120px;
-    background-color: #1a1a1a;
+    background-color: var(--card-background);
     border-radius: 12px;
     display: flex;
     flex-direction: column;
@@ -9,10 +9,9 @@ width: 140px;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer; 
-    color: white;
     font-family: sans-serif;
     padding: 10px;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease;
     box-sizing: border-box; /* Include padding in dimensions */
 }
 
@@ -40,7 +39,7 @@ width: 140px;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: var(--tech-tag-bg);
   transition: .4s;
   display: flex;
   align-items: center;
@@ -66,7 +65,7 @@ width: 140px;
 }
 
 input:checked + .slider {
-  background-color: #000000;
+  background-color: var(--card-background);
 }
 
 input:checked + .slider:before {
@@ -75,7 +74,7 @@ input:checked + .slider:before {
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #000000;
+  box-shadow: 0 0 1px var(--card-background);
 }
 
 /* Rounded sliders */

@@ -2,14 +2,7 @@
 <section class="projects-section ">
   <div class="container">
     <h2 class="section-title mt-12">{{getText('Proyectos','Projects')}}</h2>
-    
-    <div class="theme-toggle-container">
-      <label class="switch">
-        <input type="checkbox" (change)="toggleTheme()" [checked]="isDarkTheme">
-        <span class="slider round">
-        </span>
-      </label>
-    </div>
+   
 
     <div class="projects-grid">
       @for (project of projects; track project.id) {

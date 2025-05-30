@@ -1,7 +1,7 @@
 .cards-container {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: 15px;
   padding: 20px;
   margin-top: -40px;
   width: 100%;
@@ -9,10 +9,10 @@
 }
 
 .projects-card {
-  background: none; 
+  background-color: var(--card-background);
   border-radius: 10px;
   padding: 20px;
-  color: white;
+  color: var(--text-color);
   position: relative;
   overflow: hidden;
   min-height: 200px; 
@@ -20,22 +20,25 @@
   flex-direction: column;
   justify-content: space-between;
   z-index: 1;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .projects-card h2 {
-  color: white;
+  color: var(--text-color);
   margin-bottom: 10px;
   position: relative;
   z-index: 1;
   font-weight: bold;
   font-size: 1.5em;
+  transition: color 0.3s ease;
 }
 
 .projects-card p {
-  color: white;
+  color: var(--text-color);
   position: relative;
   z-index: 1;
   font-size: 1em;
+  transition: color 0.3s ease;
 }
 
 .background-code {
@@ -60,15 +63,15 @@
   position: absolute;
   top: 10px;
   right: 15px;
-  
-  color: white;
+  color: var(--text-color);
   text-decoration: none;
   font-size: 1.5em;
   z-index: 2;
+  transition: color 0.3s ease;
 }
 
 .external-link-icon:hover {
-  color: white;
+  color: var(--text-color);
   transform: scale(1.1);
 }
 
@@ -87,9 +90,9 @@
   position: absolute;
   top: 10px;
   margin-left: 280px;
-  color: white;
+  color: var(--text-color);
   text-decoration: none;
-  
+  transition: color 0.3s ease;
 }
 
 svg{
@@ -99,7 +102,7 @@ svg{
 }
 
 .linkdein-icon:hover {
-  color: #d1e8ff;
+  color: var(--tech-tag-text);
   transform: scale(1.1);
 }
 
@@ -107,13 +110,14 @@ svg{
   background-color: #E53935; 
   border-radius: 10px;
   padding: 20px;
-  color: white;
+  color: var(--text-color);
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 200px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .age-label {
@@ -131,17 +135,18 @@ svg{
   font-size: 1em;
 }
 
-.linkdein-card{
+.linkdein-card {
     background-color: #1E88E5; 
     border-radius: 10px;
     padding: 20px;
-    color: white;
+    color: var(--text-color);
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 200px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .linkdein-label{

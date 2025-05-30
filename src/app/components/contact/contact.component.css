@@ -2,7 +2,7 @@
     background-color: #1E88E5;
     border-radius: 10px;
     padding: 20px;
-    color: white;
+    color: var(--text-color);
     margin: 0 auto;
     text-align: center;
     display: flex;
@@ -15,7 +15,7 @@
     margin-top: -40px;
     position: relative;
     box-sizing: border-box;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
 
@@ -34,14 +34,15 @@
   top: 10px;
   right: 15px;
   
-  color: white;
+  color: var(--text-color);
   text-decoration: none;
   font-size: 1.5em;
   z-index: 2;
+  transition: color 0.3s ease;
 }
 
 .external-link-icon:hover {
-  color: white;
+  color: var(--text-color);
   transform: scale(1.1);
 }
 
