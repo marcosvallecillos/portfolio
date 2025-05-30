@@ -4,6 +4,7 @@
   gap: 20px;
   justify-content: center;
   padding: 20px;
+  margin-top: -40px;
 }
 .gitHub-card {
   background: none; 
@@ -12,7 +13,7 @@
   color: white;
   position: relative;
   overflow: hidden;
-  width: 55%;
+  width: 45%;
   min-height: 250px; 
   display: flex;
   flex-direction: column;
@@ -53,15 +54,27 @@
   box-sizing: border-box;
 }
 
-.external-link-icon {
+.github-icon {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  color: white;
-  text-decoration: none;
-  font-size: 1.2em;
-  z-index: 2;
+  top: 15px;
+  right:22px;
+
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    z-index: 2;
+  
 }
+svg{
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+.github-icon:hover {
+  color: #d1e8ff;
+  transform: scale(1.1);
+}
+
 .project-illustration {
   position: absolute;
   top: 0;
@@ -92,7 +105,7 @@
   grid-template-columns: repeat(4, 1fr); 
   gap: 20px; 
   text-align: center;
-  width: 20%;
+  width: 25%;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
 }
 
@@ -119,28 +132,6 @@
 }
 
 
-.linkdein-card{
-    background-color: #1E88E5; 
-    border-radius: 10px;
-    padding: 20px;
-    color: white;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 20%;
-  
-}
-.linkdein-label{
-    font-family: 'Source Sans Pro', sans-serif;
-
-  font-size: 5em;
-  margin-bottom: 5px;
-  font-weight: bold;
-
-}
-
 .nevel-english-card{
     background-color: #015177; 
     border-radius: 10px;
@@ -151,7 +142,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 20%;
+    width: 25%;
 }
 .nevel-english-label{
     font-family: 'Source Sans Pro', sans-serif;

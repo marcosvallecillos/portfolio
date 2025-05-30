@@ -12,12 +12,12 @@ import { ContactComponent } from '../../components/contact/contact.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, ContactComponent,AboutMeComponent, LanguajeBottomComponent, ThemeComponent, SocialsComponent, ProjectsComponent, SkillsComponent],
+  imports: [CommonModule,AboutMeComponent, LanguajeBottomComponent, ThemeComponent, SocialsComponent, ProjectsComponent, SkillsComponent, ContactComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements AfterViewInit {
-  @ViewChildren('aboutMeSection , socialsSection, projectsSection, skillsSection , topRightButtons') sections!: QueryList<ElementRef>;
+  @ViewChildren('aboutMeSection , socialsSection, projectsSection, skillsSection , topRightButtons, contactSection') sections!: QueryList<ElementRef>;
 
   isSpanish: boolean = true;
 
