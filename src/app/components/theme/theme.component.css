@@ -1,7 +1,6 @@
 .theme-card {
-   
-    width: 180px;
-    height: 145px;
+width: 140px;
+    height: 120px;
     background-color: #1a1a1a;
     border-radius: 12px;
     display: flex;
@@ -14,6 +13,7 @@
     font-family: sans-serif;
     padding: 10px;
     transition: transform 0.2s ease;
+    box-sizing: border-box; /* Include padding in dimensions */
 }
 
 .theme-card:hover {
@@ -74,4 +74,12 @@ input:checked + .slider:before {
 
 .slider.round:before {
     border-radius: 50%;
+}
+
+/* Tablet and larger screens */
+@media (min-width: 768px) {
+    .theme-card {
+        width: 180px; /* Restore original width on larger screens */
+        height: 145px; /* Restore original height */
+    }
 }

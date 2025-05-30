@@ -1,7 +1,6 @@
 .lenguaje-card {
-    width: 100%;
-    max-width: 180px; 
-    height: auto; 
+    width: 140px;
+    height: 120px;
     background-color: #1a1a1a;
     border-radius: 12px;
     display: flex;
@@ -114,7 +113,7 @@ input:checked + .slider:before {
 /* Tablet and larger screens */
 @media (min-width: 768px) {
     .lenguaje-card {
-        width: 180px;
-        height: 138px;  
+        width: 180px; /* Restore original width on larger screens */
+        height: 145px; /* Restore original height */
     }
 }
