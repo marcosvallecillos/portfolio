@@ -1,10 +1,11 @@
 .cards-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 20px;
-  justify-content: center;
   padding: 20px;
   margin-top: -40px;
+  width: 100%;
+  box-sizing: border-box;
 }
 .gitHub-card {
   background: none; 
@@ -13,8 +14,8 @@
   color: white;
   position: relative;
   overflow: hidden;
-  width: 45%;
-  min-height: 250px; 
+  width: 665px;
+  min-height:300px; 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -26,9 +27,8 @@
   position: relative;
   z-index: 1;
   font-weight: bold;
-  font-size: 2em;
+  font-size: 1.5em;
 }
-
 .gitHub-card p {
   color: white;
   position: relative;
@@ -57,13 +57,11 @@
 .github-icon {
   position: absolute;
   top: 15px;
-  right:22px;
-
-    color: white;
-    text-decoration: none;
-    font-size: 1.2em;
-    z-index: 2;
-  
+  right: 15px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  z-index: 2;
 }
 svg{
   width: 20px;
@@ -100,20 +98,20 @@ svg{
   background-color: #3e2723;
   color: white;
   border-radius: 10px; 
-  padding: 30px; 
+  padding: 20px; 
   display: grid;
-  grid-template-columns: repeat(4, 1fr); 
-  gap: 20px; 
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px; 
   text-align: center;
-  width: 25%;
+  min-height: 200px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
 }
 
 .skills-card img {
-  border-radius: 0; 
-  width: 80px; 
-  height: 80px; 
-  margin-bottom: 0; 
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin: 0 auto;
 }
 
 .age-label {
@@ -142,18 +140,126 @@ svg{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 25%;
+    min-height: 200px;
 }
 .nevel-english-label{
     font-family: 'Source Sans Pro', sans-serif;
 
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin-bottom: 5px;
   font-weight: bold;
 
 }
 .nevel-english-number {
-  font-size: 8em;
+  font-size: 4em;
   font-weight: bold;
   line-height: 1;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 30px;
+    }
+
+    .gitHub-card {
+        grid-column: span 2;
+        min-height: 250px;
+    }
+
+    .skills-card {
+        grid-column: span 1;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nevel-english-card {
+        grid-column: span 1;
+    }
+
+    .gitHub-card h2 {
+        font-size: 1.8em;
+    }
+
+    .skills-card img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .nevel-english-label {
+        font-size: 1.5em;
+    }
+
+    .nevel-english-number {
+        font-size: 6em;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .cards-container {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 40px;
+    }
+
+    .gitHub-card {
+        grid-column: span 1;
+    }
+
+    .skills-card {
+        grid-column: span 1;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .nevel-english-card {
+        grid-column: span 1;
+    }
+
+    .gitHub-card h2 {
+        font-size: 2em;
+    }
+
+    .skills-card img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .nevel-english-label {
+        font-size: 1.8em;
+    }
+
+    .nevel-english-number {
+        font-size: 8em;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .cards-container {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .gitHub-card, .skills-card, .nevel-english-card {
+        width: 100%;
+        min-height: 180px;
+        padding: 15px;
+    }
+
+    .gitHub-card h2 {
+        font-size: 1.3em;
+    }
+
+    .skills-card img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .nevel-english-label {
+        font-size: 1em;
+    }
+
+    .nevel-english-number {
+        font-size: 3em;
+    }
 }

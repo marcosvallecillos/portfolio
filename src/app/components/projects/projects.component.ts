@@ -12,4 +12,24 @@ import { LenguajeServiceService } from '../../services/lenguaje-service.service'
   styleUrl: './projects.component.css'
 })
 export class ProjectsComponent {
+  isSpanish: boolean = true;
+
+  constructor(
+    private languageService: LenguajeServiceService,
+  )
+    {
+    this.languageService.isSpanish$.subscribe(
+      (isSpanish: boolean) => this.isSpanish = isSpanish
+    );
+  }
+
+
+  toggleLanguage(language: 'es' | 'en') {
+    this.languageService.setLanguage(language);
+    localStorage.setItem('language', language);
+   
+  }
+  getText(es: string, en: string): string {
+    return this.isSpanish ? es : en;
+  }
 }

@@ -1,11 +1,13 @@
 .cards-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 20px;
-  justify-content: center;
   padding: 20px;
-  margin-top:-40px
+  margin-top: -40px;
+  width: 100%;
+  box-sizing: border-box;
 }
+
 .projects-card {
   background: none; 
   border-radius: 10px;
@@ -13,20 +15,20 @@
   color: white;
   position: relative;
   overflow: hidden;
-  width: 52%;
-  min-height: 250px; 
+  min-height: 200px; 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   z-index: 1;
 }
+
 .projects-card h2 {
   color: white;
   margin-bottom: 10px;
   position: relative;
   z-index: 1;
   font-weight: bold;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .projects-card p {
@@ -58,16 +60,18 @@
   position: absolute;
   top: 10px;
   right: 15px;
+  
   color: white;
-  height: 20px;
   text-decoration: none;
   font-size: 1.5em;
   z-index: 2;
 }
+
 .external-link-icon:hover {
   color: white;
   transform: scale(1.1);
 }
+
 .project-illustration {
   position: absolute;
   top: 0;
@@ -78,23 +82,27 @@
   z-index: 0;
   opacity: 0.4; 
 }
+
 .linkdein-icon {
   position: absolute;
-  top: -5px;
-  margin-left: 260px;
+  top: 10px;
+  margin-left: 280px;
   color: white;
   text-decoration: none;
   
 }
+
 svg{
   width: 20px;
   height: 20px;
   fill: currentColor;
 }
+
 .linkdein-icon:hover {
   color: #d1e8ff;
   transform: scale(1.1);
 }
+
 .age-card {
   background-color: #E53935; 
   border-radius: 10px;
@@ -105,7 +113,7 @@ svg{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 21%;
+  min-height: 200px;
 }
 
 .age-label {
@@ -114,7 +122,7 @@ svg{
 }
 
 .age-number {
-  font-size: 3em;
+  font-size: 2.5em;
   font-weight: bold;
   line-height: 1;
 }
@@ -122,7 +130,6 @@ svg{
 .age-years {
   font-size: 1em;
 }
-
 
 .linkdein-card{
     background-color: #1E88E5; 
@@ -134,15 +141,95 @@ svg{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 23%;
-  
+    min-height: 200px;
 }
+
 .linkdein-label{
     font-family: 'Source Sans Pro', sans-serif;
+    font-size: 3em;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
 
-  font-size: 5em;
-  margin-bottom: 5px;
-  font-weight: bold;
+/* Tablet */
+@media (min-width: 768px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 30px;
+  }
 
+  .projects-card {
+    grid-column: span 2;
+    min-height: 250px;
+  }
+
+  .projects-card h2 {
+    font-size: 1.8em;
+  }
+
+  .linkdein-label {
+    font-size: 4em;
+  }
+
+  .age-number {
+    font-size: 3em;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .cards-container {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 40px;
+  }
+
+  .projects-card {
+    grid-column: span 2;
+  }
+
+  .age-card {
+    grid-column: span 1;
+  }
+
+  .linkdein-card {
+    grid-column: span 1;
+  }
+
+  .projects-card h2 {
+    font-size: 2em;
+  }
+
+  .linkdein-label {
+    font-size: 5em;
+  }
+
+  .age-number {
+    font-size: 3.5em;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .cards-container {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .projects-card, .age-card, .linkdein-card {
+    min-height: 180px;
+    padding: 15px;
+  }
+
+  .projects-card h2 {
+    font-size: 1.3em;
+  }
+
+  .linkdein-label {
+    font-size: 2.5em;
+  }
+
+  .age-number {
+    font-size: 2em;
+  }
 }
 
