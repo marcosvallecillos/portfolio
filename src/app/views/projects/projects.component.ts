@@ -12,6 +12,8 @@ interface Project {
   description: { es: string; en: string };
   imageUrl: string;
   videoUrl?: string;
+  fecha_creacion?: string;
+  fecha_fin?: string;
   technologies: string[];
   imgHover?: string;
   liveUrl?: string;
@@ -34,8 +36,11 @@ export class ProjectsComponent {
   projects: Project[] = [
     {
       id: 1,
+      fecha_creacion: '27-03-2025',
+      fecha_fin: '27-06-2025',
         title: { es: 'Hairbooking', en: 'Hairbooking' },
-      description: { es: 'Aplicación web para reservar citas de peluquería.', en: 'A web application for booking hair appointments.' },
+      description: { es: ' Proyecto individual que consiste en un sistema online para barberías que facilita la gestión, las reservas de clientes y la venta de productos.',
+                     en: 'Individual project consisting of an online system for barbershops that facilitates management, customer reservations and product sales.' },
      imageUrl: '../../../../images/hairbooking.png',
       imgHover: '../../../../images/reservas.png',
       technologies: ['Angular', 'PHP' , 'HTML', 'MySQL' , 'Bootstrap'],
@@ -44,8 +49,11 @@ export class ProjectsComponent {
     },
     {
       id:2,
-    title: { es: 'Club de Lucha', en: 'Fight Club' },
-      description: { es: 'Aplicación web para gestionar un club de lucha.', en: 'A web application for managing a fight club.' },
+      fecha_creacion: '11-02-2025',
+      fecha_fin: '25-02-2025',
+      title: { es: 'Club de Lucha', en: 'Fight Club' },
+      description: { es: 'Proyecto en grupo que consiste en una aplicación web para gestionar un club de lucha.',
+                     en: 'Group project consisting of a web application to manage a fight club.' },
       imageUrl: '../../../../images/clubdelucha.png',
       imgHover: '../../../../images/reservas.png',
       technologies: ['Angular', 'PHP' , 'HTML', 'MySQL' , 'Bootstrap'],
@@ -54,14 +62,15 @@ export class ProjectsComponent {
     },
     {
       id:2,
-     title: { es: 'PlayaFinder', en: 'BeachFinder' },
-      description: { es: 'Aplicación web para encontrar playas.', en: 'A web application for finding beaches.' },
-      
-      imageUrl: '../../../../images/clubdelucha.png',
-      imgHover: '../../../../images/reservas.png',
+      fecha_creacion: '11-5-2024',
+      fecha_fin: '25-05-2024',
+      title: { es: 'PlayaFinder', en: 'BeachFinder' },
+      description: { es: 'Proyecto en grupo que consiste en una plataforma web para descubrir playas y conocer las experiencias de otros viajeros',
+                     en: 'Group project consisting of a web platform to discover beaches and learn about the experiences of other travelers.' },
+      imageUrl: '../../../../images/flayafinder.jpg',
       technologies: ['PHP' , 'HTML', 'MySQL'],
-      liveUrl: 'https://hairbooking.vercel.app/index',
-      githubUrl: 'https://github.com/PauHernandezFort/proyectoFront'
+      liveUrl: 'Website not available',
+      githubUrl: 'https://github.com/MarcCO2005/PlayaFinder'
     }
     // Add more projects here
   ];

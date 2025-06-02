@@ -1,6 +1,6 @@
 .theme-card {
-    width: 140px;
-    height: 120px;
+    width: 160px;
+    height: 140px;
     background-color: var(--card-background);
     border-radius: 12px;
     display: flex;
@@ -12,7 +12,7 @@
     font-family: sans-serif;
     padding: 10px;
     transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease;
-    box-sizing: border-box; /* Include padding in dimensions */
+    box-sizing: border-box; 
 }
 
 .theme-card:hover {
@@ -86,10 +86,109 @@ input:focus + .slider {
   border-radius: 50%;
 }
 
-/* Tablet and larger screens */
-@media (min-width: 768px) {
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
     .theme-card {
-        width: 180px; /* Restore original width on larger screens */
-        height: 145px; /* Restore original height */
+        bottom: 16px;
+        left: 16px;
+        padding: 10px;
+    }
+
+    .switch {
+        width: 48px;
+        height: 26px;
+    }
+
+    .slider:before {
+        height: 18px;
+        width: 18px;
+        left: 4px;
+        bottom: 4px;
+    }
+
+    input:checked + .slider:before {
+        transform: translateX(22px);
+    }
+}
+
+@media (max-width: 768px) {
+    .theme-card {
+        bottom: 12px;
+        left: 12px;
+        padding: 8px;
+        border-radius: 10px;
+    }
+
+    .switch {
+        width: 44px;
+        height: 24px;
+    }
+
+    .slider:before {
+        height: 16px;
+        width: 16px;
+        left: 4px;
+        bottom: 4px;
+    }
+
+    input:checked + .slider:before {
+        transform: translateX(20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .theme-card {
+        bottom: 10px;
+        left: 10px;
+        padding: 6px;
+        border-radius: 8px;
+    }
+
+    .switch {
+        width: 40px;
+        height: 22px;
+    }
+
+    .slider:before {
+        height: 14px;
+        width: 14px;
+        left: 4px;
+        bottom: 4px;
+    }
+
+    input:checked + .slider:before {
+        transform: translateX(18px);
+    }
+}
+
+/* Landscape Mode Adjustments */
+@media (max-height: 400px) and (orientation: landscape) {
+    .theme-card {
+        bottom: 8px;
+        left: 8px;
+        padding: 5px;
+    }
+
+    .switch {
+        width: 40px;
+        height: 20px;
+    }
+
+    .slider:before {
+        height: 12px;
+        width: 12px;
+        left: 4px;
+        bottom: 4px;
+    }
+
+     input:checked + .slider:before {
+        transform: translateX(16px);
+    }
+}
+
+/* Ensure sufficient space between buttons on small screens */
+@media (max-width: 600px) {
+    .theme-card {
+        left: 10px; /* Ensure consistent left margin */
     }
 }

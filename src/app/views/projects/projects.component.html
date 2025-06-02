@@ -1,34 +1,44 @@
 <app-header></app-header>
-<section class="projects-section ">
+<section class="projects-section">
   <div class="container">
-    <h2 class="section-title mt-12">{{getText('Proyectos','Projects')}}</h2>
-   
+    <div class="section-header">
+      <h2 class="section-title">{{getText('Proyectos','Projects')}}</h2>
+      <div class="section-subtitle">{{getText('Explora mis proyectos más destacados', 'Explore my featured projects')}}</div>
+    </div>
 
     <div class="projects-grid">
       @for (project of projects; track project.id) {
         <div class="project-card">
-          <div class="project-image">
-            <img [src]="project.imageUrl" [alt]="project.title">
+          <div class="project-image-wrapper">
+            <div class="project-image">
+              <img [src]="project.imageUrl" [alt]="project.title">
+              <div class="project-overlay">
+                <div class="project-links">
+                  @if (project.liveUrl) {
+                    <a [href]="project.liveUrl" target="_blank" class="project-link live-link" title="Ver proyecto">
+                      <img src="../../../../images/flecha.png" alt="Ver proyecto">
+                    </a>
+                  }
+                  @if (project.githubUrl) {
+                    <a [href]="project.githubUrl" target="_blank" class="project-link github-link" title="Ver código">
+                      <img src="../../../../images/github.png" alt="Ver código">
+                    </a>
+                  }
+                </div>
+              </div>
+            </div>
           </div>
-        
+          
           <div class="project-content">
-           <h3 class="project-title">{{ getText(project.title.es, project.title.en) }}</h3>
+            <div class="project-date">
+             <h2>Fecha Creacion: {{ project.fecha_creacion }}</h2> 
+              <h2>Fecha Finalización: {{ project.fecha_fin }} </h2> 
+            </div>
+            <h3 class="project-title">{{ getText(project.title.es, project.title.en) }}</h3>
             <p class="project-description">{{ getText(project.description.es, project.description.en) }}</p>
-           <div class="project-technologies">
+            <div class="project-technologies">
               @for (tech of project.technologies; track tech) {
                 <span class="tech-tag">{{ tech }}</span>
-              }
-            </div>
-            <div class="project-links">
-              @if (project.liveUrl) {
-                <a [href]="project.liveUrl" target="_blank" class="project-link live-link">
-                    <img class="github" src="../../../../images/flecha.png" alt="">
-                </a>
-              }
-              @if (project.githubUrl) {
-                <a [href]="project.githubUrl" target="_blank" class="project-link github-link">
-                    <img class="github" src="../../../../images/github.png" alt="">
-                </a>
               }
             </div>
           </div>

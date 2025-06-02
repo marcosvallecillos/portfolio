@@ -1,6 +1,6 @@
 .lenguaje-card {
-    width: 140px;
-    height: 120px;
+    width: 160px;
+    height: 140px;
     background-color: var(--card-background);
     border-radius: 12px;
     display: flex;
@@ -32,6 +32,87 @@
     opacity: 0.8;
     color: var(--text-color);
     transition: color 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .lenguaje-card {
+        bottom: 16px;
+        right: 16px;
+        padding: 10px 16px;
+    }
+
+    .current-language {
+        font-size: 1rem;
+    }
+
+    .other-language {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .lenguaje-card {
+        bottom: 12px;
+        right: 12px;
+        padding: 8px 14px;
+        border-radius: 10px;
+        gap: 6px; /* Reduced gap on smaller screens */
+    }
+
+    .current-language {
+        font-size: 0.95rem;
+        padding: 3px 6px;
+    }
+
+    .other-language {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .lenguaje-card {
+        bottom: 10px;
+        right: 10px;
+        padding: 6px 12px;
+        border-radius: 8px;
+        gap: 4px; /* Further reduced gap on very small screens */
+    }
+
+    .current-language {
+        font-size: 0.9rem;
+        padding: 2px 5px;
+    }
+
+    .other-language {
+        font-size: 0.75rem;
+    }
+}
+
+/* Landscape Mode Adjustments */
+@media (max-height: 400px) and (orientation: landscape) {
+    .lenguaje-card {
+        bottom: 8px;
+        right: 8px;
+        padding: 5px 10px;
+        gap: 3px;
+    }
+
+    .current-language {
+        font-size: 0.85rem;
+        padding: 1px 4px;
+    }
+
+    .other-language {
+        font-size: 0.7rem;
+    }
+}
+
+/* Ensure sufficient space between buttons on small screens */
+@media (max-width: 600px) {
+    .lenguaje-card {
+        right: 10px; /* Ensure consistent right margin */
+    }
 }
 
 /* Dark theme styles */
@@ -114,10 +195,3 @@ input:checked + .slider:before {
     display: none;
 }
 
-/* Tablet and larger screens */
-@media (min-width: 768px) {
-    .lenguaje-card {
-        width: 180px; /* Restore original width on larger screens */
-        height: 145px; /* Restore original height */
-    }
-}
