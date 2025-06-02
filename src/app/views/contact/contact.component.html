@@ -1,14 +1,21 @@
-<div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
-  <div class="bg-white rounded-lg shadow-lg p-6">
+<div class="container mt-12">
+<div class="max-w-2xl mx-auto p-4 ">
+  <div class="bg-white rounded-lg">
     <h2 class="text-2xl font-bold text-gray-900 mb-6">Contáctanos</h2>
     
-    <form (ngSubmit)="onSubmit()" #contactForm="ngForm" class="space-y-6">
+    <form 
+      (ngSubmit)="onSubmit()" 
+      class="space-y-6"
+    >
       <!-- Nombre -->
       <div>
         <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Nombre</label>
         <input type="text" id="name" name="name" [(ngModel)]="formData.name" required
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
           placeholder="Tu nombre">
+        @if(formErrors.name){
+          <p class="mt-1 text-sm text-red-600">{{ formErrors.name }}</p>
+        }
       </div>
 
       <!-- Email -->
@@ -17,6 +24,9 @@
         <input type="email" id="email" name="email" [(ngModel)]="formData.email" required
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
           placeholder="tu@email.com">
+        @if(formErrors.email){
+          <p class="mt-1 text-sm text-red-600">{{ formErrors.email }}</p>
+        }
       </div>
 
       <!-- Asunto -->
@@ -25,6 +35,9 @@
         <input type="text" id="subject" name="subject" [(ngModel)]="formData.subject" required
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
           placeholder="Asunto del mensaje">
+        @if(formErrors.subject){
+          <p class="mt-1 text-sm text-red-600">{{ formErrors.subject }}</p>
+        }
       </div>
 
       <!-- Mensaje -->
@@ -33,6 +46,9 @@
         <textarea id="message" name="message" [(ngModel)]="formData.message" required rows="4"
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
           placeholder="Escribe tu mensaje aquí..."></textarea>
+        @if(formErrors.message){
+          <p class="mt-1 text-sm text-red-600">{{ formErrors.message }}</p>
+        }
       </div>
 
       <!-- Botón de envío -->
@@ -41,11 +57,14 @@
         {{ isSubmitting ? 'Enviando...' : 'Enviar mensaje' }}
       </button>
 
-      <!-- Estado del envío -->
-      <div *ngIf="submitStatus" [ngClass]="{'text-green-600': submitStatus.includes('éxito'), 'text-red-600': submitStatus.includes('Error')}"
-        class="text-sm text-center mt-2">
-        {{ submitStatus }}
-      </div>
+      @if(submitStatus){
+        <!-- Estado del envío -->
+        <div [ngClass]="{'text-green-600': submitStatus.includes('éxito'), 'text-red-600': submitStatus.includes('Error')}"
+          class="text-sm text-center mt-2">
+          {{ submitStatus }}
+        </div>
+      }
     </form>
   </div>
+</div>
 </div>
