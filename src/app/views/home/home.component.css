@@ -24,71 +24,66 @@
 .container {
     display: flex;
     flex-direction: column;
-    
-    padding: 20px 10px;
+    padding: 50px;
     font-family: sans-serif; 
     background-color: var(--background-color);
     color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
-  
+      transition: all 0.3s ease-in-out;
     margin: 0 auto; 
 }
 
-.top-right-buttons{
+.top-right-buttons {
     display: flex;
-    width: 100px;
+    width: 20%;
     flex-direction: column; 
-    gap: 10px; 
+    gap: 10px;
+    align-items: flex-end;
     flex-shrink: 0; 
 }
 
 .header-section {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
     width: 100%;
-    padding: 10px 0;
+    padding: 40px 0;
     background-color: var(--section-background);
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease-in-out;
 }
 
 .about-me-container {
     width: 80%;
 }
 
-.top-right-buttons {
-    width: 20%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-}
-
 .projects-section,
-.skills-section,
-.contact-section {
+.skills-section{
     background-color: var(--section-background);
-    transition: background-color 0.3s ease;
-   
+    transition: all 0.3s ease-in-out;
     width: 100%;
 }
-.contact-section
-    {
-        padding: 20px 0;
-    }
 
-/* Tablet and larger screens */
-@media (min-width: 768px) {
+.contact-section {
+    background-color: var(--section-background);
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    padding: 30px 0;
+}
+/* Large Desktop screens (1400px and below) */
+@media (max-width: 1400px) {
     .container {
-        padding: 30px;
+        padding: 40px;
+    }
+}
+
+/* Desktop screens (1200px and below) */
+@media (max-width: 1200px) {
+    .container {
+        padding: 35px;
     }
 
     .header-section {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-        padding: 30px 0;
+        padding: 35px 0;
     }
 
     .about-me-container {
@@ -97,55 +92,102 @@
 
     .top-right-buttons {
         width: 25%;
-        flex-direction: column;
-        align-items: flex-end;
     }
 }
 
-/* Desktop screens */
-@media (min-width: 1024px) {
+/* Laptop screens (992px and below) */
+@media (max-width: 992px) {
     .container {
-        padding: 40px;
+        padding: 30px;
     }
 
     .header-section {
-        padding: 40px 0;
+        padding: 30px 0;
     }
 
     .about-me-container {
-        width: 80%;
+        width: 70%;
     }
 
     .top-right-buttons {
-        width: 20%;
+        width: 30%;
+    }
+
+    .projects-section,
+    .skills-section,
+    .contact-section {
+        padding: 30px 0;
     }
 }
 
-/* Large Desktop screens */
-@media (min-width: 1440px) {
+/* Tablet screens (768px and below) */
+@media (max-width: 768px) {
     .container {
-        padding: 50px;
-    }
-}
-
-/* Small mobile devices */
-@media (max-width: 480px) {
-    .container {
-        padding: 10px;
-        gap: 10px;
+        padding: 25px;
     }
 
     .header-section {
-        gap: 5px;
+        flex-direction: column;
+        align-items: center;
+        padding: 25px 0;
+        gap: 20px;
+    }
+
+    .about-me-container {
+        width: 100%;
     }
 
     .top-right-buttons {
-        gap: 5px;
+        width: 100%;
         flex-direction: row;
         justify-content: center;
-        width: 100%;
+        align-items: center;
     }
-    
+
+    .projects-section,
+    .skills-section,
+    .contact-section {
+        padding: 25px 0;
+    }
+}
+
+/* Mobile screens (576px and below) */
+@media (max-width: 576px) {
+    .container {
+        padding: 15px;
+    }
+
+    .header-section {
+        padding: 15px 0;
+        gap: 15px;
+    }
+
+    .top-right-buttons {
+        gap: 15px;
+    }
+
+    .projects-section,
+    .skills-section,
+    .contact-section {
+        padding: 15px 0;
+    }
+}
+
+/* Small mobile devices (480px and below) */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .header-section {
+        padding: 10px 0;
+        gap: 10px;
+    }
+
+    .top-right-buttons {
+        gap: 10px;
+    }
+
     .projects-section,
     .skills-section,
     .contact-section {
@@ -155,5 +197,5 @@
 
 /* Ensure smooth transitions */
 * {
-    transition: background-color 0.3s ease, color 0.3s ease;
+      transition: all 0.3s ease-in-out;
 }

@@ -86,13 +86,17 @@
   opacity: 0.4; 
 }
 
+
 .linkdein-icon {
   position: absolute;
   top: 10px;
-  margin-left: 280px;
+  right: 15px;
   color: var(--text-color);
   text-decoration: none;
   transition: color 0.3s ease;
+  z-index: 2;
+  display: flex;
+  align-items: center;
 }
 
 svg{
@@ -136,6 +140,7 @@ svg{
 }
 
 .linkdein-card {
+  position: relative;
     background-color: #1E88E5; 
     border-radius: 10px;
     padding: 20px;
@@ -229,8 +234,9 @@ svg{
     font-size: 1.3em;
   }
 
-  .linkdein-label {
-    font-size: 2.5em;
+  .linkdein-icon {
+    top: 5px;
+    right: 10px;
   }
 
   .age-number {

@@ -7,11 +7,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-right: 40px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     color: var(--text-color);
     font-family: sans-serif;
-    padding: 15px;
     transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease;
     box-sizing: border-box; 
 }
@@ -40,6 +40,7 @@
         bottom: 16px;
         right: 16px;
         padding: 10px 16px;
+        margin-right:0;
     }
 
     .current-language {
@@ -57,7 +58,9 @@
         right: 12px;
         padding: 8px 14px;
         border-radius: 10px;
-        gap: 6px; /* Reduced gap on smaller screens */
+        gap: 6px; 
+                margin-right:0;
+
     }
 
     .current-language {
@@ -76,7 +79,9 @@
         right: 10px;
         padding: 6px 12px;
         border-radius: 8px;
-        gap: 4px; /* Further reduced gap on very small screens */
+        gap: 4px; 
+                margin-right:0;
+
     }
 
     .current-language {
@@ -96,6 +101,8 @@
         right: 8px;
         padding: 5px 10px;
         gap: 3px;
+                margin-right:0;
+
     }
 
     .current-language {
@@ -111,7 +118,9 @@
 /* Ensure sufficient space between buttons on small screens */
 @media (max-width: 600px) {
     .lenguaje-card {
-        right: 10px; /* Ensure consistent right margin */
+        right: 10px; 
+                margin-right:0;
+
     }
 }
 
