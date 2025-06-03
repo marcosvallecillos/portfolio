@@ -13,7 +13,7 @@
     gap: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: all 0.3s ease, color 0.3s ease;
 }
 
 .text-content {
@@ -21,6 +21,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-weight: bold;
+
 }
 
 .about-me-card h2 {
@@ -29,8 +31,8 @@
     margin-bottom: 10px;
     text-align: center;
     color: var(--header-title-color);
+    transition: all 0.3s ease;
 
-    transition: color 0.3s ease;
 }
 
 .text-content p {
@@ -40,7 +42,8 @@
     line-height: 1.5;
     text-wrap: balance;
     margin: 0;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+
 }
 
 .image-placeholder {
@@ -52,7 +55,7 @@
     flex-shrink: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border: 3px solid var(--text-color);
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    transition: all 0.3s ease, border-color 0.3s ease;
 }
 
 .image-placeholder img {
@@ -68,7 +71,8 @@ span {
     font-weight: normal;
     display: block;
     margin-top: 10px;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+
 }
 
 /* Tablet */

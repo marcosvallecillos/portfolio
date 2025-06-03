@@ -222,6 +222,7 @@ svg{
   .cards-container {
     padding: 15px;
     gap: 15px;
+    margin-top: -15px;
   }
 
   .projects-card, .age-card, .linkdein-card {

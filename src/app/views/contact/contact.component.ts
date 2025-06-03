@@ -72,21 +72,33 @@ export class ContactComponent {
     this.submitStatus = 'Enviando...';
 
     try {
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbz5Gs0ocAOecaJNrT0rC24ccctQiOf7qOc_WLtD2yLnzgUFgjVkfuzoOnYf74Xg9uAX/exec';
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzw8NqxkzaYMkdWp2F97u-5e5508aDZwQ9gsRgQjuOlNsGUuZ8XqThjuyYJxa5Gr8mA/exec';
       
-      const response = await this.http.post(scriptURL, this.formData, {
+      const postData = {
+        name: this.formData.name,
+        email: this.formData.email,
+        subject: this.formData.subject,
+        message: this.formData.message
+      };
+      
+      const response = await this.http.post(scriptURL, postData, {
         headers: {
           'Content-Type': 'application/json'
-        }
+        },
+        responseType: 'text'
       }).toPromise();
       
-      this.submitStatus = '¡Mensaje enviado con éxito!';
-      this.formData = {
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      };
+      if (response === 'OK') {
+        this.submitStatus = '¡Mensaje enviado con éxito!';
+        this.formData = {
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        };
+      } else {
+        throw new Error('Unexpected response from server');
+      }
     } catch (error) {
       console.error('Error:', error);
       this.submitStatus = 'Error al enviar el mensaje. Por favor, intente nuevamente.';
