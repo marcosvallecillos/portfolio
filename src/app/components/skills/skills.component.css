@@ -8,6 +8,7 @@
   box-sizing: border-box;
 }
 .gitHub-card {
+   background-color: var(--image-background);
   background: none;
   border-radius: 10px;
   padding: 20px;
@@ -23,7 +24,7 @@
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 .gitHub-card h2 {
-  color: #fff;
+  color: var(--text-color);
   margin-bottom: auto;
   position: relative;
   z-index: 1;
@@ -32,7 +33,7 @@
   transition: color 0.3s ease;
 }
 .gitHub-card p {
-  color: #fff;
+  color: var(--text-color);
   position: relative;
   z-index: 1;
   font-size: 1.1em;
@@ -84,7 +85,7 @@ svg{
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
   z-index: 0;
   opacity: 0.7;
 }
@@ -150,8 +151,7 @@ svg{
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 .nevel-english-label{
-    font-family: 'Source Sans Pro', sans-serif;
-
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 1.2em;
   margin-bottom: 5px;
   font-weight: bold;
@@ -167,21 +167,23 @@ svg{
 @media (min-width: 768px) {
     .cards-container {
         grid-template-columns: repeat(3, 1fr);
-        padding: 30px;
+        margin-top:-50px;
     }
 
     .gitHub-card {
-        grid-column: span 1;
+        grid-column: span 3;
         min-height: 250px;
     }
 
     .skills-card {
-        grid-column: span 1;
+        grid-column: span 2;
+        width: 100%;
         grid-template-columns: repeat(2, 1fr);
     }
 
     .nevel-english-card {
         grid-column: span 1;
+              
     }
 
     .gitHub-card h2 {
@@ -205,12 +207,14 @@ svg{
 /* Desktop */
 @media (min-width: 1024px) {
     .cards-container {
-        grid-template-columns: repeat(3, 1fr);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
         padding: 40px;
     }
 
     .gitHub-card {
-        grid-column: span 1;
+        width: 100%;
+        grid-column: span 2;
     }
 
     .skills-card {
