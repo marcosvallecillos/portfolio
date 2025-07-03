@@ -60,3 +60,7 @@ a{
   margin: 0;
   transition: color 0.3s ease;
 }
+
+.cdk-drag {
+  cursor: move;
+}

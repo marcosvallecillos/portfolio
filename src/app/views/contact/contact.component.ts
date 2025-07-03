@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule, HttpClientModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
@@ -14,7 +14,7 @@ export class ContactComponent {
   formData = {
     name: '',
     email: '',
-    subject: '',
+    title: '',
     message: ''
   };
   isSubmitting = false;
@@ -22,18 +22,16 @@ export class ContactComponent {
   formErrors = {
     name: '',
     email: '',
-    subject: '',
+    title: '',
     message: ''
   };
-
-  constructor(private http: HttpClient) {}
 
   validateForm(): boolean {
     let isValid = true;
     this.formErrors = {
       name: '',
       email: '',
-      subject: '',
+      title: '',
       message: ''
     };
 
@@ -50,8 +48,8 @@ export class ContactComponent {
       isValid = false;
     }
 
-    if (!this.formData.subject.trim()) {
-      this.formErrors.subject = 'El asunto es requerido';
+    if (!this.formData.title.trim()) {
+      this.formErrors.title = 'El asunto es requerido';
       isValid = false;
     }
 
@@ -63,7 +61,7 @@ export class ContactComponent {
     return isValid;
   }
 
-  async onSubmit() {
+  async onSubmit(formElement: HTMLFormElement) {
     if (!this.validateForm()) {
       return;
     }
@@ -72,33 +70,20 @@ export class ContactComponent {
     this.submitStatus = 'Enviando...';
 
     try {
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbzw8NqxkzaYMkdWp2F97u-5e5508aDZwQ9gsRgQjuOlNsGUuZ8XqThjuyYJxa5Gr8mA/exec';
-      
-      const postData = {
-        name: this.formData.name,
-        email: this.formData.email,
-        subject: this.formData.subject,
-        message: this.formData.message
+      await emailjs.sendForm(
+        'service_d5xducp', // Reemplaza por tu Service ID de EmailJS
+        'template_9ipk5gs', // Reemplaza por tu Template ID de EmailJS
+        formElement,
+        'bF0Al2YQiAp5A2OIt' // Reemplaza por tu Public Key de EmailJS
+      );
+      this.submitStatus = '¡Mensaje enviado con éxito!';
+      this.formData = {
+        name: '',
+        email: '',
+        title: '',
+        message: ''
       };
-      
-      const response = await this.http.post(scriptURL, postData, {
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        responseType: 'text'
-      }).toPromise();
-      
-      if (response === 'OK') {
-        this.submitStatus = '¡Mensaje enviado con éxito!';
-        this.formData = {
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
-        };
-      } else {
-        throw new Error('Unexpected response from server');
-      }
+      formElement.reset();
     } catch (error) {
       console.error('Error:', error);
       this.submitStatus = 'Error al enviar el mensaje. Por favor, intente nuevamente.';

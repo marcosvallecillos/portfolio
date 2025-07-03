@@ -194,3 +194,7 @@ input:focus + .slider {
         left: 10px; /* Ensure consistent left margin */
     }
 }
+
+.cdk-drag {
+  cursor: move;
+}

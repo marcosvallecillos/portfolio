@@ -167,3 +167,7 @@
         font-size: 1.2rem;
     }
 }
+
+.cdk-drag {
+  cursor: move;
+}

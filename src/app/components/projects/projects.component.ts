@@ -2,13 +2,14 @@ import { Component, ElementRef, ViewChildren, QueryList } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LenguajeServiceService } from '../../services/lenguaje-service.service';
 import { RouterLink } from '@angular/router';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule,RouterLink ],
+  imports: [CommonModule,RouterLink, DragDropModule ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css'
 })

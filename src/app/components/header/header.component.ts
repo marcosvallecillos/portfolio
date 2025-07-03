@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, RouterModule,RouterLinkActive,RouterLink],
+  imports: [CommonModule, RouterModule,RouterLinkActive,RouterLink, DragDropModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })

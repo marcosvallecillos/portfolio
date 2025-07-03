@@ -1,24 +1,24 @@
 <div class="container full-height bg-black text-white">
     <div class="header-section">
-        <div class="header-container" >
+        <div class="header-container" cdkDrag>
             <app-header></app-header>
         </div>
-        <div class="about-me-container scroll-reveal" #aboutMeSection>
+        <div class="about-me-container scroll-reveal " #aboutMeSection >
             <app-about-me></app-about-me>
         </div>
-        <div class="top-right-buttons scroll-reveal" #topRightButtons>
+        <div class="top-right-buttons scroll-reveal" #topRightButtons cdkDrag>
             <app-languaje-bottom></app-languaje-bottom>
             <app-theme></app-theme>
         </div>
     </div>
    
-    <div class="projects-section scroll-reveal" #projectsSection>
+    <div class="projects-section scroll-reveal" #projectsSection >
         <app-projects></app-projects>
     </div>
-    <div class="skills-section scroll-reveal" #skillsSection>
+    <div class="skills-section scroll-reveal" #skillsSection >
         <app-skills></app-skills>
     </div>
-    <div class="contact-section scroll-reveal" #contactSection>
+    <div class="contact-section scroll-reveal" #contactSection >
         <app-contact></app-contact>
     </div>
 </div>

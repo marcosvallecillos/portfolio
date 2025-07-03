@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-socials',
-  imports: [],
+  imports: [DragDropModule],
   templateUrl: './socials.component.html',
   styleUrl: './socials.component.css'
 })

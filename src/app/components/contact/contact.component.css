@@ -92,3 +92,7 @@
         margin-top: -60px;
     }
 }
+
+.cdk-drag {
+  cursor: move;
+}

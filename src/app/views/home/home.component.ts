@@ -9,11 +9,12 @@ import { ProjectsComponent } from '../../components/projects/projects.component'
 import { SkillsComponent } from '../../components/skills/skills.component';
 import { CardContactComponent } from '../../components/contact/contact.component';
 import { HeaderComponent } from '../../components/header/header.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule,  HeaderComponent, AboutMeComponent, LanguajeBottomComponent, ThemeComponent, SocialsComponent, ProjectsComponent, SkillsComponent, CardContactComponent],
+  imports: [CommonModule,  HeaderComponent, AboutMeComponent, LanguajeBottomComponent, ThemeComponent, SocialsComponent, ProjectsComponent, SkillsComponent, CardContactComponent, DragDropModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

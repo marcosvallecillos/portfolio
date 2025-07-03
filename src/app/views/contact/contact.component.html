@@ -3,11 +3,7 @@
   <div class="bg-white rounded-lg">
     <h2 class="text-2xl font-bold text-gray-900 mb-6">Contáctanos</h2>
     
-    <form 
-    action="https://script.google.com/macros/s/AKfycbzw8NqxkzaYMkdWp2F97u-5e5508aDZwQ9gsRgQjuOlNsGUuZ8XqThjuyYJxa5Gr8mA/exec"
-      (ngSubmit)="onSubmit()" 
-      class="space-y-6"
-    >
+    <form #formElement="ngForm" (ngSubmit)="onSubmit($event.target)">
       <!-- Nombre -->
       <div>
         <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Nombre</label>
@@ -32,12 +28,12 @@
 
       <!-- Asunto -->
       <div>
-        <label for="subject" class="block mb-2 text-sm font-medium text-gray-900">Asunto</label>
-        <input type="text" id="subject" name="subject" [(ngModel)]="formData.subject" required
+        <label for="title" class="block mb-2 text-sm font-medium text-gray-900">Asunto</label>
+        <input type="text" id="title" name="title" [(ngModel)]="formData.title" required
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
           placeholder="Asunto del mensaje">
-        @if(formErrors.subject){
-          <p class="mt-1 text-sm text-red-600">{{ formErrors.subject }}</p>
+        @if(formErrors.title){
+          <p class="mt-1 text-sm text-red-600">{{ formErrors.title }}</p>
         }
       </div>
 

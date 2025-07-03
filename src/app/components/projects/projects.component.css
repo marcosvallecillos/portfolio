@@ -244,3 +244,7 @@ svg{
   }
 }
 
+.cdk-drag {
+  cursor: move;
+}
+

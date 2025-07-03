@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { LenguajeServiceService } from '../../services/lenguaje-service.service';
 import { NgClass } from '@angular/common';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-languaje-bottom',
-  imports: [NgClass],
+  imports: [NgClass, DragDropModule],
   templateUrl: './languaje-bottom.component.html',
   styleUrl: './languaje-bottom.component.css'
 })

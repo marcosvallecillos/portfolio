@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { LenguajeServiceService } from '../../services/lenguaje-service.service';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-skills',
-  imports: [],
+  imports: [DragDropModule],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.css'
 })

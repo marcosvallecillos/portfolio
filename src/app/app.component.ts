@@ -3,10 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { initFlowbite } from 'flowbite';
 import { OnInit } from '@angular/core';
 import { HeaderComponent } from './components/header/header.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,HeaderComponent],
+  imports: [RouterOutlet, HeaderComponent, DragDropModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -158,3 +158,7 @@ span {
         font-size: 0.9em;
     }
 }
+
+.cdk-drag {
+  cursor: move;
+}

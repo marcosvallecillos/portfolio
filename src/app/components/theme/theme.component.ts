@@ -2,10 +2,11 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-theme',
-  imports: [CommonModule],
+  imports: [CommonModule, DragDropModule],
   templateUrl: './theme.component.html',
   styleUrl: './theme.component.css'
 })
