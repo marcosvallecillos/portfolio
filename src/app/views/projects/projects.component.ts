@@ -57,7 +57,7 @@ export class ProjectsComponent {
       imageUrl: '../../../../images/clubdelucha.png',
       imgHover: '../../../../images/reservas.png',
       technologies: ['Angular', 'PHP' , 'HTML', 'MySQL' , 'Bootstrap'],
-      liveUrl: 'https://hairbooking.vercel.app/index',
+      liveUrl: 'https://clubdelucha.vercel.app/home',
       githubUrl: 'https://github.com/PauHernandezFort/proyectoFront'
     },
     {
