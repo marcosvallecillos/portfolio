@@ -23,7 +23,7 @@ interface Project {
 
 @Component({
   selector: 'app-projects',
-  imports: [HeaderComponent,LanguajeBottomComponent],
+  imports: [],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css'
 })
@@ -34,8 +34,21 @@ export class ProjectsComponent {
 
   isDarkTheme: boolean = false;
   projects: Project[] = [
+    
     {
-      id: 1,
+      id:1,
+      fecha_creacion: '11-07-2025',
+      fecha_fin: '25-07-2025',
+      title: { es: 'HerrajeSalimer', en: 'HerrajeSalimer' },
+      description: { es: 'Plataforma web que permite visualizar los herrajes de cada mueble a través de un buscador intuitivo. Además, ofrece funcionalidades de gestión de muebles, como la creación, edición y eliminación de registros, lo que facilita el control y la organización del inventario.',
+                     en: 'Web platform that allows you to view the hardware of each piece of furniture through an intuitive search engine. In addition, it offers furniture management functionalities, such as creating, editing and deleting records, which facilitates inventory control and organization.' },
+      imageUrl: '../../../../images/herrajesSalimer.jpeg',
+      technologies: ['Angular', 'Symfony' , 'HTML', 'MySQL' , 'Bootstrap'],
+      liveUrl: 'https://herrajesalimer.vercel.app/home',
+      githubUrl: 'https://github.com/marcosvallecillos/herrajeSalimer_front'
+    },
+    {
+      id: 2,
       fecha_creacion: '27-03-2025',
       fecha_fin: '27-06-2025',
         title: { es: 'Hairbooking', en: 'Hairbooking' },
@@ -43,12 +56,13 @@ export class ProjectsComponent {
                      en: 'Individual project consisting of an online system for barbershops that facilitates management, customer reservations and product sales.' },
      imageUrl: '../../../../images/hairbooking.png',
       imgHover: '../../../../images/reservas.png',
-      technologies: ['Angular', 'PHP' , 'HTML', 'MySQL' , 'Bootstrap'],
+      technologies: ['Angular', 'Symfony' , 'HTML', 'MySQL' , 'Bootstrap'],
       liveUrl: 'https://hairbooking.vercel.app/index',
       githubUrl: 'https://github.com/marcosvallecillos/Hairbooking'
     },
+    
     {
-      id:2,
+      id:3,
       fecha_creacion: '11-02-2025',
       fecha_fin: '25-02-2025',
       title: { es: 'Club de Lucha', en: 'Fight Club' },
@@ -56,12 +70,12 @@ export class ProjectsComponent {
                      en: 'Group project consisting of a web application to manage a fight club.' },
       imageUrl: '../../../../images/clubdelucha.png',
       imgHover: '../../../../images/reservas.png',
-      technologies: ['Angular', 'PHP' , 'HTML', 'MySQL' , 'Bootstrap'],
+      technologies: ['Angular', 'Symfony' , 'HTML', 'MySQL' , 'Bootstrap'],
       liveUrl: 'https://clubdelucha.vercel.app/home',
       githubUrl: 'https://github.com/PauHernandezFort/proyectoFront'
     },
     {
-      id:2,
+      id:3,
       fecha_creacion: '11-5-2024',
       fecha_fin: '25-05-2024',
       title: { es: 'PlayaFinder', en: 'BeachFinder' },
@@ -69,10 +83,10 @@ export class ProjectsComponent {
                      en: 'Group project consisting of a web platform to discover beaches and learn about the experiences of other travelers.' },
       imageUrl: '../../../../images/flayafinder.jpg',
       technologies: ['PHP' , 'HTML', 'MySQL'],
-      liveUrl: 'Website not available',
+      liveUrl: '',
       githubUrl: 'https://github.com/MarcCO2005/PlayaFinder'
-    }
-    // Add more projects here
+    },
+    
   ];
 
   isSpanish: boolean = true;

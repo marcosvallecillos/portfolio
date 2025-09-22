@@ -14,7 +14,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule,  HeaderComponent, AboutMeComponent, LanguajeBottomComponent, ThemeComponent, SocialsComponent, ProjectsComponent, SkillsComponent, CardContactComponent, DragDropModule],
+  imports: [CommonModule,  HeaderComponent, AboutMeComponent, LanguajeBottomComponent, ThemeComponent, ProjectsComponent, SkillsComponent, CardContactComponent, DragDropModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
