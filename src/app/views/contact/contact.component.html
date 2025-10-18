@@ -9,7 +9,7 @@
         <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Nombre</label>
         <input type="text" id="name" name="name" [(ngModel)]="formData.name" required
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-          placeholder="Tu nombre">
+          placeholder="Name">
         @if(formErrors.name){
           <p class="mt-1 text-sm text-red-600">{{ formErrors.name }}</p>
         }
@@ -31,7 +31,7 @@
         <label for="title" class="block mb-2 text-sm font-medium text-gray-900">Asunto</label>
         <input type="text" id="title" name="title" [(ngModel)]="formData.title" required
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-          placeholder="Asunto del mensaje">
+          placeholder="Message ">
         @if(formErrors.title){
           <p class="mt-1 text-sm text-red-600">{{ formErrors.title }}</p>
         }
