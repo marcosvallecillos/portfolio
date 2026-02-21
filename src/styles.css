@@ -16,6 +16,10 @@
   --tech-tag-bg: #e9ecef;
   --tech-tag-text: #495057;
   --header-title-color: #18008d;
+  --cv-background: #000000;
+  --cv-color: #ffffff;
+  --cv-button-hover: #3f3f3f;
+
 }
 
 .dark {
@@ -31,6 +35,9 @@
   --tech-tag-bg: #000000;
   --tech-tag-text: #ffffff;
   --header-title-color: #00ffd0;
+  --cv-background: #ffffff;
+  --cv-color: #000000;
+  --cv-button-hover: #818181;
 }
 
 body {

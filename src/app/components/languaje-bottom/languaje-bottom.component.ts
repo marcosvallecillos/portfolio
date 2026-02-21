@@ -5,7 +5,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-languaje-bottom',
-  imports: [NgClass, DragDropModule],
+  imports: [ DragDropModule],
   templateUrl: './languaje-bottom.component.html',
   styleUrl: './languaje-bottom.component.css'
 })

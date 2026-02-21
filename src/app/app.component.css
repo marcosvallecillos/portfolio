@@ -1,0 +1,17 @@
+.btn-cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+    background: var(--cv-background);
+    color: var(--cv-color);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn-cv:hover {
+  background-color: var(--cv-button-hover);
+  transform: scale(1.05);
+}

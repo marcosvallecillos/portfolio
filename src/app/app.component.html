@@ -1,2 +1,9 @@
 <router-outlet />
+@if(router.url === '/home'){
+<div class="cv" style="position: fixed; bottom: 20px; right: 20px;">
+    <a href="/images/CV Marcos Vallecillos.pdf" download class="btn-cv">
+    <i class="fa-solid fa-download"></i>
+    {{getText('Descargar CV', 'Download CV')}}
+    </a>
+</div>}
 <app-header></app-header>
