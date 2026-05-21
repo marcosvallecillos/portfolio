@@ -17,6 +17,7 @@ interface Project {
   technologies: string[];
   imgHover?: string;
   liveUrl?: string;
+  placeholder?: string;
   githubUrl?: string;
 }
 
@@ -35,8 +36,19 @@ export class ProjectsComponent {
   isDarkTheme: boolean = false;
   projects: Project[] = [
     
-    {
+     {
       id:1,
+      fecha_creacion: '17-08-2025',
+      fecha_fin: '25-03-2025',
+      title: { es: 'Desarrollador Freelance · Chatbot & Desarrollo Web', en: 'Freelance Developer · Chatbot & Web Development' },
+      description: { es: ' Desarrollo e implementación en producción de asistente conversacional 24/7 para empresa del sector automoción mediante WhatsApp Business API. Automatización de atención comercial, gestión dinámica de catálogo de vehículos, simulador de financiación, reserva de citas y captación automatizada de leads. Desarrollo de panel administrativo con conversaciones en tiempo real, recordatorios automáticos y seguimiento de clientes.',
+                     en: 'Development and production implementation of a 24/7 conversational assistant for a company in the automotive sector using WhatsApp Business API. Automation of sales support, dynamic vehicle catalog management, financing simulator, appointment scheduling, and automated lead capture. Development of an administration panel with real-time conversations, automatic reminders, and customer follow-up.' },
+      imageUrl: '../../../../images/flexemcar_admin.png',
+      technologies: ['Python 3.11' , 'FastAPI' , 'MySQL' , 'WhatsApp Business API' , 'Meta API REST API'],
+      placeholder: 'en produccion...',
+      liveUrl: 'https://admin-flexemcar.up.railway.app/admin',
+    },{
+      id:2,
       fecha_creacion: '11-07-2025',
       fecha_fin: '25-07-2025',
       title: { es: 'HerrajeSalimer', en: 'HerrajeSalimer' },
@@ -46,9 +58,9 @@ export class ProjectsComponent {
       technologies: ['Angular', 'Symfony' , 'HTML', 'MySQL' , 'Bootstrap'],
       liveUrl: 'https://herrajesalimer.vercel.app/home',
       githubUrl: 'https://github.com/marcosvallecillos/herrajeSalimer_front'
-    },
+    },  
     {
-      id: 2,
+      id: 3,
       fecha_creacion: '27-03-2025',
       fecha_fin: '27-06-2025',
         title: { es: 'Hairbooking', en: 'Hairbooking' },
@@ -62,7 +74,7 @@ export class ProjectsComponent {
     },
     
     {
-      id:3,
+      id:4,
       fecha_creacion: '11-02-2025',
       fecha_fin: '25-02-2025',
       title: { es: 'Club de Lucha', en: 'Fight Club' },
@@ -75,7 +87,7 @@ export class ProjectsComponent {
       githubUrl: 'https://github.com/PauHernandezFort/proyectoFront'
     },
     {
-      id:3,
+      id: 5,
       fecha_creacion: '11-5-2024',
       fecha_fin: '25-05-2024',
       title: { es: 'PlayaFinder', en: 'BeachFinder' },
