@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChildren, QueryList } from '@angular/core';
+import { Component, ElementRef, ViewChildren, QueryList, HostListener, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LenguajeServiceService } from '../../services/lenguaje-service.service';
 import { RouterLink } from '@angular/router';
@@ -13,8 +13,22 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css'
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements OnInit {
   isSpanish: boolean = true;
+  isMobile: boolean = false;
+
+  ngOnInit() {
+    this.checkScreenSize();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.checkScreenSize();
+  }
+
+  private checkScreenSize() {
+    this.isMobile = typeof window !== 'undefined' ? window.innerWidth <= 768 : false;
+  }
 
   constructor(
     private languageService: LenguajeServiceService,

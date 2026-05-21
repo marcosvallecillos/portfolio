@@ -115,10 +115,14 @@ input:focus + .slider {
 
 @media (max-width: 768px) {
     .theme-card {
+        width: 100%;
+        height: 100px;
         bottom: 12px;
         left: 12px;
         padding: 8px;
         border-radius: 10px;
+        margin-right: 0;
+        margin-left: 0;
     }
 
     .switch {

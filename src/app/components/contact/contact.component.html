@@ -1,5 +1,5 @@
 <div class="cards-container" >
-  <div class="contact-card" cdkDrag>
+  <div class="contact-card" cdkDrag [cdkDragDisabled]="isMobile">
     <img class="default-img" src="../../../../images/correo.svg" alt="Correo">
          <a href="#" class="external-link-icon" routerLink="/contact" >&#x21E8;  </a>
 

@@ -2,13 +2,13 @@
 <div class="cards-container">
  
 
-  <div class="age-card" cdkDrag>
+  <div class="age-card" cdkDrag [cdkDragDisabled]="isMobile">
     <p class="age-label">{{getText('EDAD','AGE')}} </p>
-    <p class="age-number">19</p>
+    <p class="age-number">21</p>
     <p class="age-years">{{getText('AÑOS','YEARS OLD')}} </p>
   </div>
 
-  <div class="linkdein-card" cdkDrag>
+  <div class="linkdein-card" cdkDrag [cdkDragDisabled]="isMobile">
       <p class="linkdein-label">in</p>
       <a href="https://www.linkedin.com/in/tu-perfil-linkedin" target="_blank" class="linkdein-icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
@@ -21,7 +21,7 @@
 
 
 
-   <div class="projects-card" cdkDrag>
+   <div class="projects-card" cdkDrag [cdkDragDisabled]="isMobile">
     
      <h2>{{getText('Proyectos','Projects')}} </h2>
      <p>{{getText('Aquí puedes encontrar algunos de mis proyectos.','Here you can find some of my projects.')}} </p>
