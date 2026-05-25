@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, ViewChildren, QueryList, AfterViewInit, HostListener, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AboutMeComponent } from '../../components/about-me/about-me.component';
 import { LenguajeServiceService } from '../../services/lenguaje-service.service';
@@ -18,10 +18,11 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements AfterViewInit {
+export class HomeComponent implements AfterViewInit, OnInit {
   @ViewChildren('aboutMeSection , socialsSection, projectsSection, skillsSection , topRightButtons, contactSection') sections!: QueryList<ElementRef>;
 
   isSpanish: boolean = true;
+  isMobile: boolean = false;
 
   constructor(
     private languageService: LenguajeServiceService,
@@ -30,6 +31,19 @@ export class HomeComponent implements AfterViewInit {
     this.languageService.isSpanish$.subscribe(
       (isSpanish: boolean) => this.isSpanish = isSpanish
     );
+  }
+
+  ngOnInit() {
+    this.checkScreenSize();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.checkScreenSize();
+  }
+
+  private checkScreenSize() {
+    this.isMobile = typeof window !== 'undefined' ? window.innerWidth <= 768 : false;
   }
 
   ngAfterViewInit() {

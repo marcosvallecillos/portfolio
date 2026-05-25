@@ -139,9 +139,15 @@
 
     .top-right-buttons {
         width: 100%;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    app-languaje-bottom,
+    app-theme {
+        width: 100%;
     }
 
     .projects-section,

@@ -1,4 +1,4 @@
-<div class="about-me-card" cdkDrag>
+<div class="about-me-card" cdkDrag [cdkDragDisabled]="isMobile">
   <div class="text-content">
     <h2>👋 {{ getText('Hola, soy Marcos Vallecillos', 'Hi, I\'m Marcos Vallecillos') }}</h2>
     <p>
