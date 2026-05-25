@@ -13,15 +13,14 @@ export class SocialsComponent {
     {
       name: 'GitHub',
       url: 'https://github.com/marcosvallecillos'
-    },{
+    },
+    {
       name: 'LinkedIn',
-    }, {
-      name: 'Twitter',
-    }, {
-      name: 'Instagram',
-    }, {
-      name: 'Facebook',
+      url: 'https://www.linkedin.com/in/marcosvallecillos'
+    },
+    {
+      name: 'Email',
+      url: 'mailto:marcosvallecillosu@gmail.com'
     }
-
-  ]
+  ];
 }
