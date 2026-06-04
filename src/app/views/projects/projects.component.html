@@ -1,8 +1,8 @@
 <section class="projects-section">
   <div class="container">
     <div class="section-header">
-      <h2 class="section-title">{{getText('Proyectos','Projects')}}</h2>
-      <div class="section-subtitle">{{getText('Explora mis proyectos más destacados', 'Explore my featured projects')}}</div>
+      <h2 class="section-title">{{ getText('Proyectos', 'Projects') }}</h2>
+      <div class="section-subtitle">{{ getText('Explora mis proyectos más destacados', 'Explore my featured projects') }}</div>
     </div>
 
     <div class="projects-grid">
@@ -10,7 +10,61 @@
         <div class="project-card">
           <div class="project-image-wrapper">
             <div class="project-image">
-              <img [src]="project.imageUrl" [alt]="project.title">
+              @if (project.imageUrl2) {
+                <div class="project-carousel">
+                  <div
+                    class="carousel-track"
+                    [style.transform]="'translateX(-' + getCarouselIndex(project.id) * 100 + '%)'">
+                    <div class="carousel-slide">
+                      <img
+                        [src]="project.imageUrl"
+                        [alt]="getText(project.title.es, project.title.en)">
+                    </div>
+                    <div class="carousel-slide">
+                      <img
+                        [src]="project.imageUrl2"
+                        [alt]="getText(project.title.es, project.title.en)">
+                    </div>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="carousel-btn carousel-btn-prev"
+                    (click)="prevSlide(project.id, $event)"
+                    [attr.aria-label]="getText('Imagen anterior', 'Previous image')">
+                    ‹
+                  </button>
+                  <button
+                    type="button"
+                    class="carousel-btn carousel-btn-next"
+                    (click)="nextSlide(project.id, $event)"
+                    [attr.aria-label]="getText('Imagen siguiente', 'Next image')">
+                    ›
+                  </button>
+
+                  <div class="carousel-dots">
+                    <button
+                      type="button"
+                      class="carousel-dot"
+                      [class.active]="getCarouselIndex(project.id) === 0"
+                      (click)="setSlide(project.id, 0, $event)"
+                      [attr.aria-label]="getText('Imagen 1', 'Image 1')">
+                    </button>
+                    <button
+                      type="button"
+                      class="carousel-dot"
+                      [class.active]="getCarouselIndex(project.id) === 1"
+                      (click)="setSlide(project.id, 1, $event)"
+                      [attr.aria-label]="getText('Imagen 2', 'Image 2')">
+                    </button>
+                  </div>
+                </div>
+              } @else {
+                <img
+                  [src]="project.imageUrl"
+                  [alt]="getText(project.title.es, project.title.en)">
+              }
+
               <div class="project-overlay">
                 <div class="project-links">
                   @if (project.liveUrl) {
@@ -27,11 +81,11 @@
               </div>
             </div>
           </div>
-          
+
           <div class="project-content">
             <div class="project-date">
-             <h2>Fecha Creacion: {{ project.fecha_creacion }}</h2> 
-              <h2>Fecha Finalización: {{ project.fecha_fin }} </h2> 
+              <h2>Fecha Creacion: {{ project.fecha_creacion }}</h2>
+              <h2>Fecha Finalización: {{ project.fecha_fin }}</h2>
             </div>
             <h3 class="project-title">{{ getText(project.title.es, project.title.en) }}</h3>
             <p class="project-description">{{ getText(project.description.es, project.description.en) }}</p>

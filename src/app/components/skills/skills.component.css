@@ -35,6 +35,12 @@
 .cambiarColor{
   filter: invert(1);
 }
+
+.skill-icon-extra {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
 .gitHub-card p {
   color: var(--text-color);
   position: relative;

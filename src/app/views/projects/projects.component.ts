@@ -11,7 +11,7 @@ interface Project {
   title: { es: string; en: string };
   description: { es: string; en: string };
   imageUrl: string;
-  videoUrl?: string;
+  imageUrl2?: string;
   fecha_creacion?: string;
   fecha_fin?: string;
   technologies: string[];
@@ -36,26 +36,32 @@ export class ProjectsComponent {
   isDarkTheme: boolean = false;
   projects: Project[] = [
     
-     {
-      id:1,
-      fecha_creacion: '17-08-2025',
-      fecha_fin: '25-03-2025',
+    {
+      id: 1,
+      fecha_creacion: '08-2025',
+      fecha_fin: '03-2026',
       title: { es: 'Desarrollador Freelance · Chatbot & Desarrollo Web', en: 'Freelance Developer · Chatbot & Web Development' },
-      description: { es: ' Desarrollo e implementación en producción de asistente conversacional 24/7 para empresa del sector automoción mediante WhatsApp Business API. Automatización de atención comercial, gestión dinámica de catálogo de vehículos, simulador de financiación, reserva de citas y captación automatizada de leads. Desarrollo de panel administrativo con conversaciones en tiempo real, recordatorios automáticos y seguimiento de clientes.',
-                     en: 'Development and production implementation of a 24/7 conversational assistant for a company in the automotive sector using WhatsApp Business API. Automation of sales support, dynamic vehicle catalog management, financing simulator, appointment scheduling, and automated lead capture. Development of an administration panel with real-time conversations, automatic reminders, and customer follow-up.' },
-      imageUrl: '../../../../images/flexemcar_admin.png',
-      technologies: ['Python 3.11' , 'FastAPI' , 'MySQL' , 'WhatsApp Business API' , 'Meta API REST API'],
-      placeholder: 'en produccion...',
-      liveUrl: 'https://admin-flexemcar.up.railway.app/admin',
-    },{
-      id:2,
-      fecha_creacion: '11-07-2025',
-      fecha_fin: '25-07-2025',
+      description: {
+        es: 'Asistente 24/7 con WhatsApp Business API que automatiza el 100% de la atención inicial. Gestión de flota de 32 vehículos, calculadora de financiación, captación de leads y panel de administración en tiempo real.',
+        en: '24/7 assistant with WhatsApp Business API automating 100% of initial customer service. 32-vehicle fleet management, financing calculator, lead capture, and real-time admin panel.'
+      },
+      imageUrl: '/images/admin_chatbot.png',
+      imageUrl2: '/images/image.png',
+      technologies: ['Python', 'FastAPI', 'MySQL', 'WhatsApp API', 'Railway', 'REST API'],
+      liveUrl: '',
+      githubUrl: ''
+    },
+    {
+      id: 2,
+      fecha_creacion: '07-2025',
+      fecha_fin: '07-2025',
       title: { es: 'HerrajeSalimer', en: 'HerrajeSalimer' },
-      description: { es: 'Plataforma web que permite visualizar los herrajes de cada mueble a través de un buscador intuitivo. Además, ofrece funcionalidades de gestión de muebles, como la creación, edición y eliminación de registros, lo que facilita el control y la organización del inventario.',
-                     en: 'Web platform that allows you to view the hardware of each piece of furniture through an intuitive search engine. In addition, it offers furniture management functionalities, such as creating, editing and deleting records, which facilitates inventory control and organization.' },
+      description: {
+        es: 'Motor de búsqueda inteligente y CRUD para inventario de herrajes de muebles de alta rotación.',
+        en: 'Intelligent search engine and CRUD for high-turnover furniture hardware inventory.'
+      },
       imageUrl: '../../../../images/herrajesSalimer.jpeg',
-      technologies: ['Angular', 'Symfony' , 'HTML', 'MySQL' , 'Bootstrap'],
+      technologies: ['Angular', 'Symfony', 'MySQL', 'Bootstrap'],
       liveUrl: 'https://herrajesalimer.vercel.app/home',
       githubUrl: 'https://github.com/marcosvallecillos/herrajeSalimer_front'
     },  
@@ -68,41 +74,44 @@ export class ProjectsComponent {
                      en: 'Individual project consisting of an online system for barbershops that facilitates management, customer reservations and product sales.' },
      imageUrl: '../../../../images/hairbooking.png',
       imgHover: '../../../../images/reservas.png',
-      technologies: ['Angular', 'Symfony' , 'HTML', 'MySQL' , 'Bootstrap'],
+      technologies: ['Angular', 'Symfony', 'MySQL', 'Bootstrap'],
       liveUrl: 'https://hairbooking.vercel.app/index',
       githubUrl: 'https://github.com/marcosvallecillos/Hairbooking'
     },
-    
     {
       id:4,
       fecha_creacion: '11-02-2025',
       fecha_fin: '25-02-2025',
       title: { es: 'Club de Lucha', en: 'Fight Club' },
-      description: { es: 'Proyecto en grupo que consiste en una aplicación web para gestionar un club de lucha.',
-                     en: 'Group project consisting of a web application to manage a fight club.' },
+      description: {
+        es: 'Plataforma de gestión deportiva para socios, competiciones y cuotas.',
+        en: 'Sports management platform for members, competitions, and fees.'
+      },
       imageUrl: '../../../../images/clubdelucha.png',
       imgHover: '../../../../images/reservas.png',
-      technologies: ['Angular', 'Symfony' , 'HTML', 'MySQL' , 'Bootstrap'],
+      technologies: ['Angular', 'Symfony', 'MySQL'],
       liveUrl: 'https://clubdelucha.vercel.app/home',
       githubUrl: 'https://github.com/PauHernandezFort/proyectoFront'
     },
     {
-      id: 5,
+      id:5,
       fecha_creacion: '11-5-2024',
       fecha_fin: '25-05-2024',
       title: { es: 'PlayaFinder', en: 'BeachFinder' },
-      description: { es: 'Proyecto en grupo que consiste en una plataforma web para descubrir playas y conocer las experiencias de otros viajeros',
-                     en: 'Group project consisting of a web platform to discover beaches and learn about the experiences of other travelers.' },
+      description: {
+        es: 'Red social geolocalizada para descubrir y valorar playas con sistema de recomendaciones.',
+        en: 'Geolocated social network to discover and rate beaches with a recommendation system.'
+      },
       imageUrl: '../../../../images/flayafinder.jpg',
-      technologies: ['PHP' , 'HTML', 'MySQL'],
+      technologies: ['PHP', 'HTML5', 'MySQL'],
       liveUrl: '',
       githubUrl: 'https://github.com/MarcCO2005/PlayaFinder'
     },
-    
   ];
 
   isSpanish: boolean = true;
-  
+  private carouselIndexes: Record<number, number> = {};
+
     constructor(
       private languageService: LenguajeServiceService,
       private themeService: ThemeService,
@@ -113,15 +122,36 @@ export class ProjectsComponent {
         (isSpanish: boolean) => this.isSpanish = isSpanish
       );
     }
-  
-  
+
+
     toggleLanguage(language: 'es' | 'en') {
       this.languageService.setLanguage(language);
       localStorage.setItem('language', language);
-     
+
     }
      getText(es: string, en: string): string {
     return this.isSpanish ? es : en;
+  }
+
+  getCarouselIndex(projectId: number): number {
+    return this.carouselIndexes[projectId] ?? 0;
+  }
+
+  setSlide(projectId: number, index: number, event?: Event): void {
+    event?.stopPropagation();
+    this.carouselIndexes = { ...this.carouselIndexes, [projectId]: index };
+  }
+
+  nextSlide(projectId: number, event?: Event): void {
+    event?.stopPropagation();
+    const next = (this.getCarouselIndex(projectId) + 1) % 2;
+    this.setSlide(projectId, next);
+  }
+
+  prevSlide(projectId: number, event?: Event): void {
+    event?.stopPropagation();
+    const prev = (this.getCarouselIndex(projectId) - 1 + 2) % 2;
+    this.setSlide(projectId, prev);
   }
 
   toggleTheme() {
@@ -129,6 +159,6 @@ export class ProjectsComponent {
   }
 
   goBack() {
-    this.router.navigate(['/']); // Navigate to the home page
+    this.router.navigate(['/']);
   }
 }
