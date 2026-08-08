@@ -10,21 +10,18 @@
         <div class="project-card">
           <div class="project-image-wrapper">
             <div class="project-image">
-              @if (project.imageUrl2) {
+              @if (getProjectSlides(project).length > 1) {
                 <div class="project-carousel">
                   <div
                     class="carousel-track"
                     [style.transform]="'translateX(-' + getCarouselIndex(project.id) * 100 + '%)'">
-                    <div class="carousel-slide">
-                      <img
-                        [src]="project.imageUrl"
-                        [alt]="getText(project.title.es, project.title.en)">
-                    </div>
-                    <div class="carousel-slide">
-                      <img
-                        [src]="project.imageUrl2"
-                        [alt]="getText(project.title.es, project.title.en)">
-                    </div>
+                    @for (slide of getProjectSlides(project); track slide.index) {
+                      <div class="carousel-slide">
+                        <img
+                          [src]="slide.src"
+                          [alt]="slide.alt">
+                      </div>
+                    }
                   </div>
 
                   <button
@@ -43,20 +40,15 @@
                   </button>
 
                   <div class="carousel-dots">
-                    <button
-                      type="button"
-                      class="carousel-dot"
-                      [class.active]="getCarouselIndex(project.id) === 0"
-                      (click)="setSlide(project.id, 0, $event)"
-                      [attr.aria-label]="getText('Imagen 1', 'Image 1')">
-                    </button>
-                    <button
-                      type="button"
-                      class="carousel-dot"
-                      [class.active]="getCarouselIndex(project.id) === 1"
-                      (click)="setSlide(project.id, 1, $event)"
-                      [attr.aria-label]="getText('Imagen 2', 'Image 2')">
-                    </button>
+                    @for (slide of getProjectSlides(project); track slide.index) {
+                      <button
+                        type="button"
+                        class="carousel-dot"
+                        [class.active]="getCarouselIndex(project.id) === slide.index"
+                        (click)="setSlide(project.id, slide.index, $event)"
+                        [attr.aria-label]="getText('Imagen ' + (slide.index + 1), 'Image ' + (slide.index + 1))">
+                      </button>
+                    }
                   </div>
                 </div>
               } @else {

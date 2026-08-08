@@ -1,4 +1,4 @@
-import { Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
+import { Component } from '@angular/core';
 import { LenguajeServiceService } from '../../services/lenguaje-service.service';
 import { ThemeService } from '../../services/theme.service';
 import { Router } from '@angular/router';
@@ -12,6 +12,12 @@ interface Project {
   description: { es: string; en: string };
   imageUrl: string;
   imageUrl2?: string;
+  imageUrl3?: string;
+  imageUrl4?: string;
+  imageUrl5?: string;
+  imageUrl6?: string;
+
+
   fecha_creacion?: string;
   fecha_fin?: string;
   technologies: string[];
@@ -31,13 +37,29 @@ interface Project {
 
 
 export class ProjectsComponent {
- @ViewChildren('projectCard') projectCards!: QueryList<ElementRef>;
-
   isDarkTheme: boolean = false;
   projects: Project[] = [
     
     {
       id: 1,
+      fecha_creacion: '05-2026',
+      fecha_fin: '06-2026',
+      title: { es: 'DrawnWorlds', en: 'DrawnWorlds' },
+      description: {
+        es: 'Cuenta cuentos interactivo que utiliza IA Generativa para crear historias personalizadas en tiempo real. El usuario elige el personaje, escenario y emoción, y sus decisiones modifican el desarrollo de la historia, haciendo que cada aventura sea única.',
+        en: 'Interactive that uses Generative AI to create personalized stories in real-time. The user selects the character, setting, and emotion, and their choices modify the development of the story, making each adventure unique.' 
+      },
+      imageUrl: '/images/DrawnWorlds/bienvenida.png',
+      imageUrl2: '/images/DrawnWorlds/age_range.png',
+      imageUrl3: '/images/DrawnWorlds/select_hero.png',
+      imageUrl4: '/images/DrawnWorlds/select_place.png',
+      imageUrl5: '/images/DrawnWorlds/select_feeling.png',
+      imageUrl6: '/images/DrawnWorlds/select_feeling.png',
+      technologies: ['Angular', 'FastAPI', 'MySQL', 'Web Speech API', 'Railway','Grok API', 'REST API'],
+      liveUrl: 'https://drawnworlds.vercel.app/',
+      githubUrl: ''
+    },{
+      id: 2,
       fecha_creacion: '08-2025',
       fecha_fin: '03-2026',
       title: { es: 'Desarrollador Freelance · Chatbot & Desarrollo Web', en: 'Freelance Developer · Chatbot & Web Development' },
@@ -52,7 +74,7 @@ export class ProjectsComponent {
       githubUrl: ''
     },
     {
-      id: 2,
+      id: 3,
       fecha_creacion: '07-2025',
       fecha_fin: '07-2025',
       title: { es: 'HerrajeSalimer', en: 'HerrajeSalimer' },
@@ -66,7 +88,7 @@ export class ProjectsComponent {
       githubUrl: 'https://github.com/marcosvallecillos/herrajeSalimer_front'
     },  
     {
-      id: 3,
+      id: 4,
       fecha_creacion: '27-03-2025',
       fecha_fin: '27-06-2025',
         title: { es: 'Hairbooking', en: 'Hairbooking' },
@@ -79,7 +101,7 @@ export class ProjectsComponent {
       githubUrl: 'https://github.com/marcosvallecillos/Hairbooking'
     },
     {
-      id:4,
+      id:5,
       fecha_creacion: '11-02-2025',
       fecha_fin: '25-02-2025',
       title: { es: 'Club de Lucha', en: 'Fight Club' },
@@ -94,7 +116,7 @@ export class ProjectsComponent {
       githubUrl: 'https://github.com/PauHernandezFort/proyectoFront'
     },
     {
-      id:5,
+      id:6,
       fecha_creacion: '11-5-2024',
       fecha_fin: '25-05-2024',
       title: { es: 'PlayaFinder', en: 'BeachFinder' },
@@ -133,6 +155,27 @@ export class ProjectsComponent {
     return this.isSpanish ? es : en;
   }
 
+  getProjectSlides(project: Project): { src: string; alt: string; index: number }[] {
+    const slideSources = [
+      project.imageUrl,
+      project.imageUrl2,
+      project.imageUrl3,
+      project.imageUrl4,
+      project.imageUrl5,
+      project.imageUrl6,
+    ].filter((src): src is string => !!src);
+
+    return slideSources.map((src, index) => ({
+      src,
+      alt: this.getText(project.title.es, project.title.en),
+      index,
+    }));
+  }
+
+  getCarouselCount(project: Project): number {
+    return this.getProjectSlides(project).length;
+  }
+
   getCarouselIndex(projectId: number): number {
     return this.carouselIndexes[projectId] ?? 0;
   }
@@ -144,13 +187,25 @@ export class ProjectsComponent {
 
   nextSlide(projectId: number, event?: Event): void {
     event?.stopPropagation();
-    const next = (this.getCarouselIndex(projectId) + 1) % 2;
+    const project = this.projects.find((project) => project.id === projectId);
+    if (!project) return;
+
+    const totalSlides = this.getCarouselCount(project);
+    if (totalSlides <= 1) return;
+
+    const next = (this.getCarouselIndex(projectId) + 1) % totalSlides;
     this.setSlide(projectId, next);
   }
 
   prevSlide(projectId: number, event?: Event): void {
     event?.stopPropagation();
-    const prev = (this.getCarouselIndex(projectId) - 1 + 2) % 2;
+    const project = this.projects.find((project) => project.id === projectId);
+    if (!project) return;
+
+    const totalSlides = this.getCarouselCount(project);
+    if (totalSlides <= 1) return;
+
+    const prev = (this.getCarouselIndex(projectId) - 1 + totalSlides) % totalSlides;
     this.setSlide(projectId, prev);
   }
 
